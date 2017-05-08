@@ -1,0 +1,36 @@
+
+Tank {
+  int barrel (0-90)
+  int powder (10-100)
+  int health (0-100)
+}
+
+Ground {
+ 320 x 200px
+
+ int altitude[320];
+ 0-40
+
+}
+
+GameMaster {
+ 
+Tank player1;
+Tank player2;
+
+void execute() {
+  player1 - beallit
+  player1 - lo - roppája
+  modosit (player1, player2, jatekter)
+  game over, win
+
+  player2 - beallit
+  player2 - lo - roppája
+  modosit (player1, player2, jatekter)
+  game over, win
+
+elolrol
+}
+
+
+}
