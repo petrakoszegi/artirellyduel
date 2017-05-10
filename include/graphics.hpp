@@ -231,10 +231,10 @@ struct event
     int pos_x, pos_y;
     int button;
     int time;
+    int type;
+    // !!!
     void* widget;
     int code;
-    int type;
-
 };
 
 // Class of input device (singleton)

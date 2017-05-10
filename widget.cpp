@@ -33,7 +33,7 @@ void Widget::setDisabled(bool disabled) {
 void Widget::setFocus(bool focus) {
   _focus = focus;
   if (_focus == true) {
-    event e = {0, 0, 0, 0, 0, this, __MESSAGE__OnFocus, ev_widget};
+    event e = {0, 0, 0, 0, 0, ev_widget, this, __MESSAGE__OnFocus};
     handle(e);
   }
 }

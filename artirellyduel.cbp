@@ -45,14 +45,17 @@
 		<Unit filename="button.cpp" />
 		<Unit filename="button.hpp" />
 		<Unit filename="checkbox.hpp" />
-		<Unit filename="dialog1.hpp" />
-		<Unit filename="dialog2.hpp" />
+		<Unit filename="ground.cpp" />
+		<Unit filename="ground.hpp" />
 		<Unit filename="listview.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="resources.hpp" />
 		<Unit filename="spinbutton.cpp" />
 		<Unit filename="spinbutton.hpp" />
 		<Unit filename="textbox.cpp" />
 		<Unit filename="textbox.hpp" />
+		<Unit filename="toolbar.cpp" />
+		<Unit filename="toolbar.hpp" />
 		<Unit filename="widget.cpp" />
 		<Unit filename="widget.hpp" />
 		<Extensions>

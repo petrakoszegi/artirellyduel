@@ -9,7 +9,6 @@ void Ground::generateAltitudes(int min, int max) {
    if ((max - min) == 1) {
      // ..
    } else {
-//     int p = (min + max) / 2;
      int p = (rand() % (max - min - 1)) + min + 1;
      int delta = (max - min) / 4;
 
@@ -28,12 +27,14 @@ Ground::Ground(Widget * parent, int id, int x, int y) :
 void Ground::draw() const {
   int x = 0;
 
+  gout << color(0, 0, 180);
+  gout << move_to(0, 0) << box(640, 400);
+
   gout << color(240, 200, 30);
 //  gout << line_to(_x + x, _y + 400 - _altitudes[x]);
   for (x = 0; x < 640; x++) {
     gout << move_to(_x + x, _y + 399) << line_to(_x + x, _y + 399 - _altitudes[x]);
   }
-
 }
 
 void Ground::initialize() {
