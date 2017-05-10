@@ -1,9 +1,14 @@
 
 #include "artirellyduel.hpp"
 
+#define __IDC__GROUND 1
+
 ArtirellyDuel::ArtirellyDuel() :
-    Widget(NULL, 0, 0, 0, 640, 480) {
+    Widget(NULL, 0, 0, 0, 640, 480),
+    _ground(this, __IDC__GROUND, 0, 0) {
     gout.open(640, 480);
+
+    _ground.add(_widgets);
 }
 
 void ArtirellyDuel::run() {
@@ -12,22 +17,22 @@ void ArtirellyDuel::run() {
 
     while (gin >> ev) {
         if ((ev.type == ev_mouse) && (ev.button == btn_left)) {
-            for (size_t i = 0; i < widgets.size(); i++) {
-                if (widgets[i]->is_selected(ev.pos_x, ev.pos_y)) {
-                        widgets[i]->setFocus(true);
+            for (size_t i = 0; i < _widgets.size(); i++) {
+                if (_widgets[i]->is_selected(ev.pos_x, ev.pos_y)) {
+                        _widgets[i]->setFocus(true);
                         focus = i;
                 } else {
-                        widgets[i]->setFocus(false);
+                        _widgets[i]->setFocus(false);
                 }
             }
         }
         if (focus != -1) {
-            widgets[focus]->handle(ev);
+            _widgets[focus]->handle(ev);
         }
 
         // draw
-        for (size_t i = 0; i < widgets.size(); i++) {
-            widgets[i]->draw();
+        for (size_t i = 0; i < _widgets.size(); i++) {
+            _widgets[i]->draw();
         }
 
         gout << refresh;

@@ -4,12 +4,15 @@
 #include <vector>
 
 #include "widget.hpp"
+#include "ground.hpp"
 
 using namespace std;
 
 class ArtirellyDuel : public Widget {
 protected:
-    vector<Widget *> widgets;
+    vector<Widget *> _widgets;
+
+    Ground _ground;
 
 public:
     ArtirellyDuel();
@@ -18,7 +21,7 @@ public:
     void run();
 
 //  virtual void draw() const ;
-  //virtual void handle(Widget * source, int message, event ev);
+  //virtual void handle(event ev);
 };
 
 #endif // BUTTON_HPP_INCLUDED
