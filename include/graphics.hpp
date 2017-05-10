@@ -221,7 +221,7 @@ enum button_t {
 };
 
 enum event_type {
-    ev_key = 1, ev_mouse, ev_timer
+    ev_key = 1, ev_mouse, ev_timer, ev_widget
 };
 
 // Event descriptor
@@ -231,6 +231,8 @@ struct event
     int pos_x, pos_y;
     int button;
     int time;
+    void* widget;
+    int code;
     int type;
 
 };

@@ -36,7 +36,7 @@ public:
     virtual void add(vector<Widget *> & widgets);
 
     virtual void draw() const;
-    virtual void handle(Widget * source, int message, event ev);
+    virtual void handle(event ev);
 };
 
 

@@ -10,7 +10,7 @@ void TextBox::draw() const {
     gout << move_to(_x + 5, _y + 18) << ((_disabled == false) ? color(255,255,255) : color(192,192,192)) << text(_text);
 }
 
-void TextBox::handle(Widget * source, int message, event ev) {
+void TextBox::handle(event ev) {
   if (_disabled == false) {
 	if (_edit == true) {
 		if (ev.type == ev_key) {
@@ -39,7 +39,7 @@ void TextBox::handle(Widget * source, int message, event ev) {
 	}
   }
 
-  Widget::handle(source, message, ev);
+  Widget::handle(ev);
 }
 
 const string & TextBox::getText() const {

@@ -40,15 +40,13 @@
 			<Add library="lib/libSDLmain.a" />
 			<Add directory="lib" />
 		</Linker>
+		<Unit filename="artirellyduel.cpp" />
+		<Unit filename="artirellyduel.hpp" />
 		<Unit filename="button.cpp" />
 		<Unit filename="button.hpp" />
-		<Unit filename="checkbox.cpp" />
 		<Unit filename="checkbox.hpp" />
-		<Unit filename="dialog1.cpp" />
 		<Unit filename="dialog1.hpp" />
-		<Unit filename="dialog2.cpp" />
 		<Unit filename="dialog2.hpp" />
-		<Unit filename="listview.cpp" />
 		<Unit filename="listview.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="spinbutton.cpp" />

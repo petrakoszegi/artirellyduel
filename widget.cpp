@@ -33,8 +33,8 @@ void Widget::setDisabled(bool disabled) {
 void Widget::setFocus(bool focus) {
   _focus = focus;
   if (_focus == true) {
-    event e = {0, 0, 0, 0, 0, 0};
-    handle(this, __MESSAGE__OnFocus, e);
+    event e = {0, 0, 0, 0, 0, this, __MESSAGE__OnFocus, ev_widget};
+    handle(e);
   }
 }
 
@@ -64,9 +64,9 @@ void Widget::draw() const {
   }
 }
 
-void Widget::handle(Widget * source, int message, event ev) {
+void Widget::handle(event ev) {
   if (_parent != NULL) {
-    _parent->handle(source, message, ev);
+    _parent->handle(ev);
   }
 }
 

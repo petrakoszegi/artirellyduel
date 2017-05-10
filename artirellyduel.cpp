@@ -22,7 +22,7 @@ void ArtirellyDuel::run() {
             }
         }
         if (focus != -1) {
-            widgets[focus]->handle(NULL, 0, ev);
+            widgets[focus]->handle(ev);
         }
 
         // draw
