@@ -7,9 +7,10 @@ class Artirelly : public Widget {
 protected:
     int _angle;
     int _power;
+    int _direction;
 
 public:
-    Artirelly(Widget * parent, int id);
+    Artirelly(Widget * parent, int id, int direction);
 
     virtual void draw() const;
 

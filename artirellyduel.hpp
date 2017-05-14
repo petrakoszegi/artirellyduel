@@ -19,6 +19,8 @@ protected:
     Artirelly _player2;
     Toolbar _toolbar;
 
+    Artirelly * _currentPlayer;
+
     typedef enum {
       PLAYER1_SETUP,
       PLAYER1_SHOT,
@@ -28,6 +30,8 @@ protected:
     } states;
 
     states _state;
+
+    void updateToolbar();
 
 public:
     ArtirellyDuel();

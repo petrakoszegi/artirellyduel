@@ -3,12 +3,20 @@
 
 #include "widget.hpp"
 #include "button.hpp"
+#include "spinbutton.hpp"
+#include "textbox.hpp"
 
 class Toolbar : public Widget {
-protected:
+public:
     Button _buttonNewGame;
 
-public:
+    TextBox _labelAngle;
+    SpinButton _spinButtonAngle;
+    TextBox _labelPower;
+    SpinButton _spinButtonPower;
+    Button _buttonFire;
+    Button _buttonPass;
+
     Toolbar(Widget * parent, int id, int x, int y);
 
     virtual void add(vector<Widget *> & widgets);
