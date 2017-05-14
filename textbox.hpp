@@ -13,7 +13,7 @@ protected:
 	bool _edit;
 
 public:
-    TextBox(Widget * parent, int id, int x, int y, int sizeX, int sy);
+    TextBox(Widget * parent, int id, int x, int y, int sizeX, int sizeY);
     virtual void draw() const ;
     virtual void handle(Widget * widget, int code, event ev);
 

@@ -21,6 +21,9 @@ public:
     SpinButton(Widget * parent, int id, int x, int y, int sx, int sy, int currentValue, int minValue, int maxValue);
     virtual void add(vector<Widget *> & widgets);
     virtual void handle(Widget * widget, int code, event ev);
+
+    int getCurrentValue() const;
+    void setCurrentValue(int currentValue);
 };
 
 

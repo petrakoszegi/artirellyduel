@@ -81,5 +81,17 @@ void SpinButton::handle(Widget * widget, int code, event ev) {
       _textBox.setText(buffer);
   }
 
-  Widget::handle(widget, code, ev);
+  Widget::handle(this, code, ev);
 }
+
+int SpinButton::getCurrentValue() const {
+    return (_currentValue);
+}
+
+void SpinButton::setCurrentValue(int currentValue) {
+    char buffer[128];
+    _currentValue = currentValue;
+    sprintf(buffer, "%d", _currentValue);
+    _textBox.setText(buffer);
+}
+
