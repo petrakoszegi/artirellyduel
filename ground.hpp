@@ -14,8 +14,8 @@ public:
 
     virtual void draw() const;
 
-    // generates a new ground
     void initialize();
+    int smooth(int x, int e);
 };
 
 #endif // GROUND_HPP_INCLUDED

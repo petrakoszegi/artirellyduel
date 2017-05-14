@@ -13,6 +13,9 @@ void Ground::generateAltitudes(int min, int max) {
      int delta = (max - min) / 4;
 
      _altitudes[p] = ((_altitudes[min] + _altitudes[max]) / 2) - delta + (rand() % ((2 * delta) + 1));
+     if (_altitudes[p] < 50) {
+       _altitudes[p] = 50;
+     }
 
      generateAltitudes(min, p);
      generateAltitudes(p, max);
@@ -21,7 +24,6 @@ void Ground::generateAltitudes(int min, int max) {
 
 Ground::Ground(Widget * parent, int id, int x, int y) :
     Widget(parent, id, x, y, 640, 400) {
-  initialize();
 }
 
 void Ground::draw() const {
@@ -38,8 +40,26 @@ void Ground::draw() const {
 }
 
 void Ground::initialize() {
-    _altitudes[0] = (rand() % 200) + 100;
-    _altitudes[639] = (rand() % 200) + 100;
+    _altitudes[0] = (rand() % 150) + 50;
+    _altitudes[639] = (rand() % 150) + 50;
 
     generateAltitudes(0, 639);
+}
+
+
+int Ground::smooth(int x, int e) {
+  int m = _altitudes[x];
+  int i = 0;
+
+  for (i = (x - e); i < (x + e); i++) {
+    if (_altitudes[i] < m) {
+      m = _altitudes[i];
+    }
+  }
+
+  for (i = (x - e); i < (x + e); i++) {
+    _altitudes[i] = m;
+  }
+
+  return (m);
 }
