@@ -29,7 +29,7 @@ void SpinButton::add(vector<Widget *> & widgets) {
   _buttonUp.add(widgets);
 }
 
-void SpinButton::handle(event ev) {
+void SpinButton::handle(Widget * widget, int code, event ev) {
   if (_disabled == false) {
       char buffer[128];
 
@@ -40,16 +40,16 @@ void SpinButton::handle(event ev) {
         _currentValue = _currentValue - 1;
       }
 
-      if (ev.widget != NULL) {
-          switch (((Widget *)ev.widget)->getId()) {
+      if (widget != NULL) {
+          switch (widget->getId()) {
           case __SpinButton__IDC_DOWN : {
-            if (ev.code == __MESSAGE__OnClick) {
+            if (code == __MESSAGE__OnClick) {
               _currentValue = _currentValue - 1;
             }
             break;
           }
           case __SpinButton__IDC_UP : {
-            if (ev.code == __MESSAGE__OnClick) {
+            if (code == __MESSAGE__OnClick) {
               _currentValue = _currentValue + 1;
             }
             break;
@@ -81,5 +81,5 @@ void SpinButton::handle(event ev) {
       _textBox.setText(buffer);
   }
 
-  Widget::handle(ev);
+  Widget::handle(widget, code, ev);
 }

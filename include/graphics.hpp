@@ -221,7 +221,7 @@ enum button_t {
 };
 
 enum event_type {
-    ev_key = 1, ev_mouse, ev_timer, ev_widget
+    ev_key = 1, ev_mouse, ev_timer
 };
 
 // Event descriptor
@@ -232,9 +232,6 @@ struct event
     int button;
     int time;
     int type;
-    // !!!
-    void* widget;
-    int code;
 };
 
 // Class of input device (singleton)

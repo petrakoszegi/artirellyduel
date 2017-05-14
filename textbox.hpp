@@ -15,7 +15,7 @@ protected:
 public:
     TextBox(Widget * parent, int id, int x, int y, int sizeX, int sy);
     virtual void draw() const ;
-    virtual void handle(event ev);
+    virtual void handle(Widget * widget, int code, event ev);
 
   const string & getText() const;
   void setText(const string & s);

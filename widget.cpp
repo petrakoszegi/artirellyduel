@@ -22,6 +22,31 @@ bool Widget::is_selected(int mouse_x, int mouse_y) const
     return mouse_x>_x && mouse_x<_x+_size_x && mouse_y>_y && mouse_y<_y+_size_y;
 }
 
+
+int Widget::getPositionX() const {
+    return (_x);
+}
+
+void Widget::setPositionX(int x) {
+    _x = x;
+}
+
+int Widget::getPositionY() const {
+    return (_y);
+}
+
+void Widget::setPositionY(int y) {
+    _y = y;
+}
+
+int Widget::getSizeX() const {
+    return (_size_x);
+}
+
+int Widget::getSizeY() const {
+    return (_size_y);
+}
+
 int Widget::getId() const {
   return (_id);
 }
@@ -33,8 +58,8 @@ void Widget::setDisabled(bool disabled) {
 void Widget::setFocus(bool focus) {
   _focus = focus;
   if (_focus == true) {
-    event e = {0, 0, 0, 0, 0, ev_widget, this, __MESSAGE__OnFocus};
-    handle(e);
+    event e = {0, 0, 0, 0, 0, 0};
+    handle(this, __MESSAGE__OnFocus, e);
   }
 }
 
@@ -64,9 +89,9 @@ void Widget::draw() const {
   }
 }
 
-void Widget::handle(event ev) {
+void Widget::handle(Widget * widget, int code, event ev) {
   if (_parent != NULL) {
-    _parent->handle(ev);
+    _parent->handle(widget, code, ev);
   }
 }
 
